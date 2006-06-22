@@ -2,4 +2,4 @@
 /INSTALL.BLAS -text
 /Makefile.am -text
 /configure -text
-/get.blas -text
+/get.Blas -text
