@@ -45,7 +45,7 @@ AC_COIN_DEBUG_COMPILE(Blas)
 # Get the name of the Fortran compiler and appropriate compiler options
 AC_COIN_PROG_F77
 
-# Initialize autotools
+# Initialize automake
 AC_COIN_INIT_AUTO_TOOLS
 
 AC_CONFIG_FILES([Makefile])
