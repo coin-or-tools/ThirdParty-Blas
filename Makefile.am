@@ -1,4 +1,4 @@
-# Copyright (C) 2003, 2006 International Business Machines and others.
+# Copyright (C) 2003, 2007 International Business Machines and others.
 # All Rights Reserved.
 # This file is distributed under the Common Public License.
 
@@ -8,7 +8,11 @@ AUTOMAKE_OPTIONS = foreign
 
 EXTRA_DIST = get.blas INSTALL.BLAS
 
-noinst_LTLIBRARIES = libcoinblas.la
+if SKIPMAKE
+  noinst_LTLIBRARIES =
+else
+  noinst_LTLIBRARIES = libcoinblas.la
+endif
 
 nodist_libcoinblas_la_SOURCES = \
 	dasum.f \
@@ -56,6 +60,6 @@ libcoinblas_la_LDFLAGS = $(LT_LDFLAGS)
 ########################################################################
 
 # Files that are generated and should be cleaned with make distclean
-DISTCLEANFILES =
+DISTCLEANFILES = $(MAKEOKFILE)
 
 include ../../BuildTools/Makemain.inc
