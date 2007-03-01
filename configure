@@ -22576,7 +22576,7 @@ _ACEOF
 fi
 
 MAKEOKFILE=.MakeOk
-if test $coin_has_blas = yes && test $use_blas != BUILD; then
+if test $coin_has_blas = yes && test "$use_blas" != BUILD; then
   rm -f $MAKEOKFILE
   { echo "$as_me:$LINENO: The Blas sources don't need to be compiled" >&5
 echo "$as_me: The Blas sources don't need to be compiled" >&6;}

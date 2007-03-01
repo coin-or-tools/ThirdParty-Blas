@@ -51,7 +51,7 @@ AC_COIN_INIT_AUTO_TOOLS
 # Check if Blas is already available on the system or provided by user
 AC_COIN_HAS_BLAS
 MAKEOKFILE=.MakeOk
-if test $coin_has_blas = yes && test $use_blas != BUILD; then
+if test $coin_has_blas = yes && test "$use_blas" != BUILD; then
   rm -f $MAKEOKFILE
   AC_MSG_NOTICE([The Blas sources don't need to be compiled])
   MAKEOKFILE=
