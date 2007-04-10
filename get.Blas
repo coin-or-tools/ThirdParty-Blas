@@ -24,6 +24,10 @@ tar xf blas.tar
 echo "Deleting the tar file..."
 rm blas.tar
 
+echo "Moving the source files from BLAS subdirectory"
+mv BLAS/*.f .
+rm -rf BLAS
+
 echo " "
 echo "Done downloading the source code for BLAS."
 echo " "
