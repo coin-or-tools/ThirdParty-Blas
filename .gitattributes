@@ -1,5 +1,7 @@
 * text=auto !eol
 /INSTALL.BLAS -text
 /Makefile.am -text
+/README -text
+/blas_addlibs.txt.in -text
 /configure -text
 /get.Blas -text

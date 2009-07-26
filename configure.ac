@@ -52,19 +52,21 @@ AC_COIN_PROG_F77
 # Initialize automake
 AC_COIN_INIT_AUTO_TOOLS
 
-# Check if Blas is already available on the system or provided by user
-AC_COIN_HAS_BLAS
-MAKEOKFILE=.MakeOk
-if test $coin_has_blas = yes && test "$use_blas" != BUILD; then
-  rm -f $MAKEOKFILE
-  AC_MSG_NOTICE([The Blas sources don't need to be compiled])
-  MAKEOKFILE=
-else
-  touch $MAKEOKFILE
-fi
-AC_SUBST(MAKEOKFILE)
-AM_CONDITIONAL(SKIPMAKE, test -z "$MAKEOKFILE")
+AC_COIN_HAS_PROJECT(Blas)
 
-AC_CONFIG_FILES([Makefile])
+# Check if Blas is already available on the system or provided by user
+#AC_COIN_HAS_BLAS
+#MAKEOKFILE=.MakeOk
+#if test $coin_has_blas = yes && test "$use_blas" != BUILD; then
+#  rm -f $MAKEOKFILE
+#  AC_MSG_NOTICE([The Blas sources don't need to be compiled])
+#  MAKEOKFILE=
+#else
+#  touch $MAKEOKFILE
+#fi
+#AC_SUBST(MAKEOKFILE)
+#AM_CONDITIONAL(SKIPMAKE, test -z "$MAKEOKFILE")
+
+AC_CONFIG_FILES([Makefile blas_addlibs.txt])
 
 AC_COIN_FINALIZE
