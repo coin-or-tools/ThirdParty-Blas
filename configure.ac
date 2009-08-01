@@ -67,6 +67,6 @@ AC_COIN_HAS_PROJECT(Blas)
 #AC_SUBST(MAKEOKFILE)
 #AM_CONDITIONAL(SKIPMAKE, test -z "$MAKEOKFILE")
 
-AC_CONFIG_FILES([Makefile blas_addlibs.txt])
+AC_CONFIG_FILES([Makefile blas_addlibs.txt blas.pc blas-uninstalled.pc])
 
 AC_COIN_FINALIZE

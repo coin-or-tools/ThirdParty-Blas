@@ -55,6 +55,9 @@ libcoinblas_la_LDFLAGS = $(LT_LDFLAGS)
 addlibsdir = $(prefix)/share/doc/coin/ThirdParty/Blas
 addlibs_DATA = blas_addlibs.txt README
 
+pkgconfiglibdir = $(prefix)/lib/ThirdParty/pkgconfig
+pkgconfiglib_DATA = blas.pc
+
 ########################################################################
 #                         Maintainer Stuff                             #
 ########################################################################

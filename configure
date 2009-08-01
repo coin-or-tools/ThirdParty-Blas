@@ -20360,7 +20360,7 @@ echo "${ECHO_T}$coin_has_blas" >&6
 #AC_SUBST(MAKEOKFILE)
 #AM_CONDITIONAL(SKIPMAKE, test -z "$MAKEOKFILE")
 
-                    ac_config_files="$ac_config_files Makefile blas_addlibs.txt"
+                                        ac_config_files="$ac_config_files Makefile blas_addlibs.txt blas.pc blas-uninstalled.pc"
 
 
 
@@ -21032,6 +21032,8 @@ do
   # Handling of arguments.
   "Makefile" ) CONFIG_FILES="$CONFIG_FILES Makefile" ;;
   "blas_addlibs.txt" ) CONFIG_FILES="$CONFIG_FILES blas_addlibs.txt" ;;
+  "blas.pc" ) CONFIG_FILES="$CONFIG_FILES blas.pc" ;;
+  "blas-uninstalled.pc" ) CONFIG_FILES="$CONFIG_FILES blas-uninstalled.pc" ;;
   "depfiles" ) CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
   *) { { echo "$as_me:$LINENO: error: invalid argument: $ac_config_target" >&5
 echo "$as_me: error: invalid argument: $ac_config_target" >&2;}
