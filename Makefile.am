@@ -8,10 +8,13 @@ AUTOMAKE_OPTIONS = foreign
 
 EXTRA_DIST = get.blas INSTALL.BLAS
 
-thirdpartylibdir = $(prefix)/lib/ThirdParty
-thirdpartylib_LTLIBRARIES = libcoinblas.la
+if SKIPMAKE
+  noinst_LTLIBRARIES =
+else
+  noinst_LTLIBRARIES = libcoinblas.la
+endif
 
-libcoinblas_la_SOURCES = \
+nodist_libcoinblas_la_SOURCES = \
 	dasum.f \
 	daxpy.f \
 	dcopy.f \
@@ -51,12 +54,6 @@ libcoinblas_la_SOURCES = \
 	xerbla.f
 
 libcoinblas_la_LDFLAGS = $(LT_LDFLAGS)
-
-addlibsdir = $(prefix)/share/doc/coin/ThirdParty/Blas
-addlibs_DATA = blas_addlibs.txt README
-
-pkgconfiglibdir = $(prefix)/lib/ThirdParty/pkgconfig
-pkgconfiglib_DATA = blas.pc
 
 ########################################################################
 #                         Maintainer Stuff                             #
