@@ -129,7 +129,9 @@ AUTOHEADER = @AUTOHEADER@
 AUTOMAKE = @AUTOMAKE@
 AUX_DIR = @AUX_DIR@
 AWK = @AWK@
+BLASDATADIR = @BLASDATADIR@
 BLASDOCDIR = @BLASDOCDIR@
+BLASINSTDIR = @BLASINSTDIR@
 BLASOBJDIR = @BLASOBJDIR@
 BLASSRCDIR = @BLASSRCDIR@
 BUILDTOOLSDIR = @BUILDTOOLSDIR@
@@ -138,6 +140,8 @@ CCDEPMODE = @CCDEPMODE@
 CDEFS = @CDEFS@
 CFLAGS = @CFLAGS@
 COIN_HAS_BLAS_FALSE = @COIN_HAS_BLAS_FALSE@
+COIN_HAS_BLAS_PREINSTALLED_FALSE = @COIN_HAS_BLAS_PREINSTALLED_FALSE@
+COIN_HAS_BLAS_PREINSTALLED_TRUE = @COIN_HAS_BLAS_PREINSTALLED_TRUE@
 COIN_HAS_BLAS_TRUE = @COIN_HAS_BLAS_TRUE@
 CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
@@ -254,8 +258,6 @@ AUTOMAKE_OPTIONS = foreign
 EXTRA_DIST = get.blas INSTALL.BLAS $(am__append_1)
 thirdpartylibdir = $(prefix)/lib/ThirdParty
 thirdpartylib_LTLIBRARIES = libcoinblas.la
-pkgconfiglibdir = $(prefix)/lib/ThirdParty/pkgconfig
-pkgconfiglib_DATA = blas.pc
 libcoinblas_la_SOURCES = \
 	dasum.f \
 	daxpy.f \
@@ -298,6 +300,8 @@ libcoinblas_la_SOURCES = \
 libcoinblas_la_LDFLAGS = $(LT_LDFLAGS)
 addlibsdir = $(prefix)/share/doc/coin/ThirdParty/Blas
 addlibs_DATA = blas_addlibs.txt README
+pkgconfiglibdir = $(prefix)/lib/ThirdParty/pkgconfig
+pkgconfiglib_DATA = blas.pc
 
 ########################################################################
 #                         Maintainer Stuff                             #
