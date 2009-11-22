@@ -1,5 +1,5 @@
 prefix=@prefix@
-libdir=@BLASOBJDIR@
+libdir=@ABSBUILDDIR@
 
 Name: Blas
 Description: Basic linear algebra package
