@@ -21318,7 +21318,7 @@ fi
 #END
 }
 
-                                        ac_config_files="$ac_config_files Makefile blas_addlibs.txt blas.pc blas-uninstalled.pc"
+                                        ac_config_files="$ac_config_files Makefile blas_addlibs.txt coinblas.pc coinblas-uninstalled.pc"
 
 
 
@@ -21993,8 +21993,8 @@ do
   # Handling of arguments.
   "Makefile" ) CONFIG_FILES="$CONFIG_FILES Makefile" ;;
   "blas_addlibs.txt" ) CONFIG_FILES="$CONFIG_FILES blas_addlibs.txt" ;;
-  "blas.pc" ) CONFIG_FILES="$CONFIG_FILES blas.pc" ;;
-  "blas-uninstalled.pc" ) CONFIG_FILES="$CONFIG_FILES blas-uninstalled.pc" ;;
+  "coinblas.pc" ) CONFIG_FILES="$CONFIG_FILES coinblas.pc" ;;
+  "coinblas-uninstalled.pc" ) CONFIG_FILES="$CONFIG_FILES coinblas-uninstalled.pc" ;;
   "depfiles" ) CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
   *) { { echo "$as_me:$LINENO: error: invalid argument: $ac_config_target" >&5
 echo "$as_me: error: invalid argument: $ac_config_target" >&2;}

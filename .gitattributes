@@ -2,8 +2,8 @@
 /INSTALL.BLAS -text
 /Makefile.am -text
 /README -text
-/blas-uninstalled.pc.in -text
-/blas.pc.in -text
 /blas_addlibs.txt.in -text
+/coinblas-uninstalled.pc.in -text
+/coinblas.pc.in -text
 /configure -text
 /get.Blas -text

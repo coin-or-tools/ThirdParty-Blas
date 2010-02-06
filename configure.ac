@@ -58,6 +58,6 @@ coin_need_flibs=yes
 # Initialize automake
 AC_COIN_INIT_AUTO_TOOLS
 
-AC_CONFIG_FILES([Makefile blas_addlibs.txt blas.pc blas-uninstalled.pc])
+AC_CONFIG_FILES([Makefile blas_addlibs.txt coinblas.pc coinblas-uninstalled.pc])
 
 AC_COIN_FINALIZE

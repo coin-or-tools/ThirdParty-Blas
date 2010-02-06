@@ -8,7 +8,7 @@ AUTOMAKE_OPTIONS = foreign
 
 EXTRA_DIST = get.blas INSTALL.BLAS
 
-thirdpartylibdir = $(prefix)/lib/ThirdParty
+thirdpartylibdir = $(libdir)/coin/ThirdParty
 thirdpartylib_LTLIBRARIES = libcoinblas.la
 
 libcoinblas_la_SOURCES = \
@@ -52,11 +52,11 @@ libcoinblas_la_SOURCES = \
 
 libcoinblas_la_LDFLAGS = $(LT_LDFLAGS)
 
-addlibsdir = $(prefix)/share/doc/coin/ThirdParty/Blas
+addlibsdir = $(datadir)/coin/doc/ThirdParty/Blas
 addlibs_DATA = blas_addlibs.txt README
 
-pkgconfiglibdir = $(prefix)/lib/ThirdParty/pkgconfig
-pkgconfiglib_DATA = blas.pc
+pkgconfiglibdir = $(libdir)/pkgconfig
+pkgconfiglib_DATA = coinblas.pc
 
 ########################################################################
 #                         Maintainer Stuff                             #
