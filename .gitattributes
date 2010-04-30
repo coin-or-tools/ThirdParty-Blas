@@ -1,8 +1,6 @@
 * text=auto !eol
 /INSTALL.BLAS -text
 /Makefile.am -text
-/README -text
-/blas_addlibs.txt.in -text
 /coinblas-uninstalled.pc.in -text
 /coinblas.pc.in -text
 /configure -text
