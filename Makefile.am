@@ -57,7 +57,7 @@ addlibsdir = $(datadir)/coin/doc/ThirdParty/Blas
 addlibs_DATA = blas_addlibs.txt
 
 blas_addlibs.txt : coinblas.pc
-	PKG_CONFIG_PATH=.:$(libdir)/pkgconfig:${PKG_CONFIG_PATH} $(PKG_CONFIG) --libs coinblas > blas_addlibs.txt
+	PKG_CONFIG_PATH=.:@COIN_PKG_CONFIG_PATH@ $(PKG_CONFIG) --libs coinblas > blas_addlibs.txt
 endif
 
 pkgconfiglibdir = $(libdir)/pkgconfig
