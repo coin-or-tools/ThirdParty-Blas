@@ -8,13 +8,10 @@ AUTOMAKE_OPTIONS = foreign
 
 EXTRA_DIST = get.blas INSTALL.BLAS
 
-if SKIPMAKE
-  noinst_LTLIBRARIES =
-else
-  noinst_LTLIBRARIES = libcoinblas.la
-endif
+thirdpartylibdir = $(libdir)/coin/ThirdParty
+thirdpartylib_LTLIBRARIES = libcoinblas.la
 
-nodist_libcoinblas_la_SOURCES = \
+libcoinblas_la_SOURCES = \
 	dasum.f \
 	daxpy.f \
 	dcopy.f \
@@ -55,9 +52,22 @@ nodist_libcoinblas_la_SOURCES = \
 
 libcoinblas_la_LDFLAGS = $(LT_LDFLAGS)
 
+if COIN_HAS_PKGCONFIG
+addlibsdir = $(datadir)/coin/doc/ThirdParty/Blas
+addlibs_DATA = blas_addlibs.txt
+
+blas_addlibs.txt : coinblas.pc
+	PKG_CONFIG_PATH=.:@COIN_PKG_CONFIG_PATH@ $(PKG_CONFIG) --libs coinblas > blas_addlibs.txt
+endif
+
+pkgconfiglibdir = $(libdir)/pkgconfig
+pkgconfiglib_DATA = coinblas.pc
+
 ########################################################################
 #                         Maintainer Stuff                             #
 ########################################################################
+
+CLEANFILES = blas_addlibs.txt
 
 # Files that are generated and should be cleaned with make distclean
 DISTCLEANFILES = $(MAKEOKFILE)

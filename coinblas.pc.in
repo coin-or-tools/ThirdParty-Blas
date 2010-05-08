@@ -1,0 +1,9 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@/coin/ThirdParty
+
+Name: Blas
+Description: Basic linear algebra package
+Version: @PACKAGE_VERSION@
+Libs: -L${libdir} -lcoinblas @ADDLIBS@
+Cflags:

@@ -1,0 +1,8 @@
+prefix=@prefix@
+libdir=@ABSBUILDDIR@
+
+Name: Blas
+Description: Basic linear algebra package
+Version: @PACKAGE_VERSION@
+Libs: -L${libdir} -lcoinblas @ADDLIBS@
+Cflags:

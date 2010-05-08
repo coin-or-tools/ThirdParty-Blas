@@ -1,5 +1,7 @@
 * text=auto !eol
 /INSTALL.BLAS -text
 /Makefile.am -text
+/coinblas-uninstalled.pc.in -text
+/coinblas.pc.in -text
 /configure -text
 /get.Blas -text
