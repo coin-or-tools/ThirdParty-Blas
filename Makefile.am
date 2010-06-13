@@ -72,4 +72,4 @@ CLEANFILES = blas_addlibs.txt
 # Files that are generated and should be cleaned with make distclean
 DISTCLEANFILES = $(MAKEOKFILE)
 
-include ../../BuildTools/Makemain.inc
+include BuildTools/Makemain.inc

@@ -3,5 +3,11 @@
 /Makefile.am -text
 /coinblas-uninstalled.pc.in -text
 /coinblas.pc.in -text
+/config.guess -text
+/config.sub -text
 /configure -text
+/depcomp -text
 /get.Blas -text
+/install-sh -text
+/ltmain.sh -text
+/missing -text
