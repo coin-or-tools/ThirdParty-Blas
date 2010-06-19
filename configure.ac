@@ -30,7 +30,7 @@ AC_CONFIG_SRCDIR(dgemm.f)
 # /usr/local.
 AC_PREFIX_DEFAULT([`pwd`])
 
-AC_COIN_PROJECTDIR_INIT
+AC_COIN_PROJECTDIR_INIT(Blas)
 
 #############################################################################
 #                         Standard build tool stuff                         #
