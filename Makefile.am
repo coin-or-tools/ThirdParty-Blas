@@ -60,7 +60,7 @@ addlibsdir = $(DESTDIR)$(datadir)/coin/doc/ThirdParty/Blas
 	
 install-data-hook:
 	@$(mkdir_p) "$(addlibsdir)"
-	PKG_CONFIG_PATH=@COIN_PKG_CONFIG_PATH@ PKG_CONFIG_DISABLE_UNINSTALLED= \
+	PKG_CONFIG_PATH=@COIN_PKG_CONFIG_PATH@ \
 	$(PKG_CONFIG) --libs coinblas > $(addlibsdir)/blas_addlibs.txt
 endif
 
