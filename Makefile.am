@@ -52,16 +52,17 @@ libcoinblas_la_SOURCES = \
 
 libcoinblas_la_LDFLAGS = $(LT_LDFLAGS)
 
-if COIN_HAS_PKGCONFIG
-addlibsdir = $(datadir)/coin/doc/ThirdParty/Blas
-addlibs_DATA = blas_addlibs.txt
-
-blas_addlibs.txt : coinblas.pc
-	PKG_CONFIG_PATH=.:@COIN_PKG_CONFIG_PATH@ $(PKG_CONFIG) --libs coinblas > blas_addlibs.txt
-endif
-
 pkgconfiglibdir = $(libdir)/pkgconfig
 pkgconfiglib_DATA = coinblas.pc
+
+if COIN_HAS_PKGCONFIG
+addlibsdir = $(DESTDIR)$(datadir)/coin/doc/ThirdParty/Blas
+	
+install-data-hook:
+	@$(mkdir_p) "$(addlibsdir)"
+	PKG_CONFIG_PATH=@COIN_PKG_CONFIG_PATH@ PKG_CONFIG_DISABLE_UNINSTALLED= \
+	$(PKG_CONFIG) --libs coinblas > $(addlibsdir)/blas_addlibs.txt
+endif
 
 ########################################################################
 #                         Maintainer Stuff                             #
