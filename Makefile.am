@@ -67,6 +67,9 @@ uninstall-hook:
 	rm -f $(addlibsdir)/blas_addlibs.txt
 endif
 
+test: $(libampl)
+	@echo "No test available for Blas."
+
 ########################################################################
 #                         Maintainer Stuff                             #
 ########################################################################

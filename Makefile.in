@@ -717,6 +717,9 @@ uninstall-am: uninstall-info-am uninstall-pkgconfiglibDATA \
 @COIN_HAS_PKGCONFIG_TRUE@uninstall-hook:
 @COIN_HAS_PKGCONFIG_TRUE@	rm -f $(addlibsdir)/blas_addlibs.txt
 
+test: $(libampl)
+	@echo "No test available for Blas."
+
 install-doc: $(DocFiles)
 	test -z "$(DocInstallDir)" || $(mkdir_p) "$(DESTDIR)$(DocInstallDir)"
 	for file in $(DocFiles); do \
