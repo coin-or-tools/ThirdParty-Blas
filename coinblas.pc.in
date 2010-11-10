@@ -4,6 +4,6 @@ libdir=@libdir@/coin/ThirdParty
 
 Name: Blas
 Description: Basic linear algebra package
-Version: @PACKAGE_VERSION@ @BLAS_PCLIBS@
-Libs: -L${libdir} -lcoinblas
+Version: @PACKAGE_VERSION@
+Libs: -L${libdir} -lcoinblas @BLAS_PCLIBS@
 Cflags:
