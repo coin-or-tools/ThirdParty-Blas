@@ -4,5 +4,5 @@ libdir=@ABSBUILDDIR@
 Name: Blas
 Description: Basic linear algebra package
 Version: @PACKAGE_VERSION@
-Libs: -L${libdir} -lcoinblas @BLAS_PCLIBS@
+Libs: ${libdir}/libcoinblas.la @BLAS_PCLIBS@
 Cflags:
