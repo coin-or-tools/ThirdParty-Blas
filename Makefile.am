@@ -8,8 +8,7 @@ AUTOMAKE_OPTIONS = foreign
 
 EXTRA_DIST = get.blas INSTALL.BLAS
 
-thirdpartylibdir = $(libdir)/coin/ThirdParty
-thirdpartylib_LTLIBRARIES = libcoinblas.la
+lib_LTLIBRARIES = libcoinblas.la
 
 libcoinblas_la_SOURCES = \
 	dasum.f \
