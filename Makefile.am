@@ -54,19 +54,7 @@ libcoinblas_la_LDFLAGS = $(LT_LDFLAGS)
 pkgconfiglibdir = $(libdir)/pkgconfig
 pkgconfiglib_DATA = coinblas.pc
 
-if COIN_HAS_PKGCONFIG
-addlibsdir = $(DESTDIR)$(datadir)/coin/doc/ThirdParty/Blas
-	
-install-data-hook:
-	@$(mkdir_p) "$(addlibsdir)"
-	PKG_CONFIG_PATH=@COIN_PKG_CONFIG_PATH@ \
-	$(PKG_CONFIG) --libs coinblas > $(addlibsdir)/blas_addlibs.txt
-
-uninstall-hook:
-	rm -f $(addlibsdir)/blas_addlibs.txt
-endif
-
-test: $(libampl)
+test:
 	@echo "No test available for Blas."
 
 ########################################################################
