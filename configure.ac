@@ -12,7 +12,7 @@
 
 AC_PREREQ(2.59)
 
-AC_INIT([ThirdPartyBlas],[1.1],[http://projects.coin-or.org/BuildTools/newticket])
+AC_INIT([ThirdPartyBlas],[1.1.4],[http://projects.coin-or.org/BuildTools/newticket])
 
 AC_COPYRIGHT([
 Copyright 2006 International Business Machines and others.
