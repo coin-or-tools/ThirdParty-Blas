@@ -56,8 +56,8 @@ DIST_COMMON = $(am__configure_deps) $(srcdir)/BuildTools/Makemain.inc \
 	$(srcdir)/coinblas-uninstalled.pc.in $(srcdir)/coinblas.pc.in \
 	$(top_srcdir)/configure config.guess config.sub depcomp \
 	install-sh ltmain.sh missing
-@HAVE_EXTERNALS_TRUE@am__append_1 = Externals
-@HAVE_EXTERNALS_TRUE@am__append_2 = .Externals-stamp
+@HAVE_EXTERNALS_TRUE@am__append_1 = Dependencies
+@HAVE_EXTERNALS_TRUE@am__append_2 = .Dependencies-stamp
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \
@@ -296,7 +296,6 @@ libcoinblas_la_SOURCES = \
 libcoinblas_la_LDFLAGS = $(LT_LDFLAGS)
 pkgconfiglibdir = $(libdir)/pkgconfig
 pkgconfiglib_DATA = coinblas.pc
-@COIN_HAS_PKGCONFIG_TRUE@addlibsdir = $(DESTDIR)$(datadir)/coin/doc/ThirdParty/Blas
 
 ########################################################################
 #                         Maintainer Stuff                             #
@@ -628,8 +627,6 @@ distclean-generic:
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
 	@echo "it deletes files that may require special tools to rebuild."
-@COIN_HAS_PKGCONFIG_FALSE@install-data-hook:
-@COIN_HAS_PKGCONFIG_FALSE@uninstall-hook:
 clean: clean-am
 
 clean-am: clean-generic clean-libLTLIBRARIES clean-libtool \
@@ -652,8 +649,6 @@ info: info-am
 info-am:
 
 install-data-am: install-pkgconfiglibDATA
-	@$(NORMAL_INSTALL)
-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
 
 install-exec-am: install-libLTLIBRARIES
 
@@ -684,8 +679,6 @@ ps-am:
 
 uninstall-am: uninstall-info-am uninstall-libLTLIBRARIES \
 	uninstall-pkgconfiglibDATA
-	@$(NORMAL_INSTALL)
-	$(MAKE) $(AM_MAKEFLAGS) uninstall-hook
 
 .PHONY: CTAGS GTAGS all all-am am--refresh check check-am clean \
 	clean-generic clean-libLTLIBRARIES clean-libtool ctags dist \
@@ -693,26 +686,18 @@ uninstall-am: uninstall-info-am uninstall-libLTLIBRARIES \
 	distcheck distclean distclean-compile distclean-generic \
 	distclean-libtool distclean-tags distcleancheck distdir \
 	distuninstallcheck dvi dvi-am html html-am info info-am \
-	install install-am install-data install-data-am \
-	install-data-hook install-exec install-exec-am install-info \
-	install-info-am install-libLTLIBRARIES install-man \
-	install-pkgconfiglibDATA install-strip installcheck \
-	installcheck-am installdirs maintainer-clean \
-	maintainer-clean-generic mostlyclean mostlyclean-compile \
-	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
-	tags uninstall uninstall-am uninstall-hook uninstall-info-am \
-	uninstall-libLTLIBRARIES uninstall-pkgconfiglibDATA
+	install install-am install-data install-data-am install-exec \
+	install-exec-am install-info install-info-am \
+	install-libLTLIBRARIES install-man install-pkgconfiglibDATA \
+	install-strip installcheck installcheck-am installdirs \
+	maintainer-clean maintainer-clean-generic mostlyclean \
+	mostlyclean-compile mostlyclean-generic mostlyclean-libtool \
+	pdf pdf-am ps ps-am tags uninstall uninstall-am \
+	uninstall-info-am uninstall-libLTLIBRARIES \
+	uninstall-pkgconfiglibDATA
 
 
-@COIN_HAS_PKGCONFIG_TRUE@install-data-hook:
-@COIN_HAS_PKGCONFIG_TRUE@	@$(mkdir_p) "$(addlibsdir)"
-@COIN_HAS_PKGCONFIG_TRUE@	PKG_CONFIG_PATH=@COIN_PKG_CONFIG_PATH@ \
-@COIN_HAS_PKGCONFIG_TRUE@	$(PKG_CONFIG) --libs coinblas > $(addlibsdir)/blas_addlibs.txt
-
-@COIN_HAS_PKGCONFIG_TRUE@uninstall-hook:
-@COIN_HAS_PKGCONFIG_TRUE@	rm -f $(addlibsdir)/blas_addlibs.txt
-
-test: $(libampl)
+test:
 	@echo "No test available for Blas."
 
 install-doc: $(DocFiles)
@@ -754,14 +739,14 @@ uninstall-doc:
 @MAINTAINER_MODE_TRUE@$(AUX_DIR)/ltmain.sh: $(BUILDTOOLSDIR)/ltmain.sh
 @MAINTAINER_MODE_TRUE@	cp $< $@
 
-# Take care of updating externals (if Externals file exists)
-@HAVE_EXTERNALS_TRUE@@MAINTAINER_MODE_TRUE@$(top_builddir)/Makefile: .Externals-stamp
+# Take care of updating externals (if Dependencies file exists)
+@HAVE_EXTERNALS_TRUE@@MAINTAINER_MODE_TRUE@$(top_builddir)/Makefile: .Dependencies-stamp
 
-@HAVE_EXTERNALS_TRUE@@MAINTAINER_MODE_TRUE@.Externals-stamp: $(srcdir)/Externals
-@HAVE_EXTERNALS_TRUE@@MAINTAINER_MODE_TRUE@	cd $(srcdir); svn propset svn:externals -F Externals .
-@HAVE_EXTERNALS_TRUE@@MAINTAINER_MODE_TRUE@	touch .Externals-stamp
+@HAVE_EXTERNALS_TRUE@@MAINTAINER_MODE_TRUE@.Dependencies-stamp: $(srcdir)/Dependencies
+@HAVE_EXTERNALS_TRUE@@MAINTAINER_MODE_TRUE@	cd $(srcdir); BuildTools/set_externals Dependencies
+@HAVE_EXTERNALS_TRUE@@MAINTAINER_MODE_TRUE@	touch .Dependencies-stamp
 
-@HAVE_EXTERNALS_TRUE@@MAINTAINER_MODE_TRUE@update-externals: .Externals-stamp
+@HAVE_EXTERNALS_TRUE@@MAINTAINER_MODE_TRUE@update-externals: .Dependencies-stamp
 @HAVE_EXTERNALS_TRUE@@MAINTAINER_MODE_TRUE@	cd $(srcdir); svn update
 
 .PHONY: install-doc uninstall-doc update-externals
