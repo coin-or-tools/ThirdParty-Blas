@@ -13,6 +13,7 @@ lib_LTLIBRARIES = libcoinblas.la
 libcoinblas_la_SOURCES = \
 	dasum.f \
 	daxpy.f \
+	dcabs1.f \
 	dcopy.f \
 	ddot.f \
 	dgbmv.f \
@@ -46,8 +47,29 @@ libcoinblas_la_SOURCES = \
 	dtrsm.f \
 	dtrsv.f \
 	idamax.f \
+	isamax.f \
+	izamax.f \
 	lsame.f \
-	xerbla.f
+	sgemm.f \
+	sgemv.f \
+	sger.f \
+	sscal.f \
+	sswap.f \
+	ssyr.f \
+	strsm.f \
+	xerbla.f \
+	zaxpy.f \
+	zcopy.f \
+	zdscal.f \
+	zdotc.f \
+	zdotu.f \
+	zgemm.f \
+	zgemv.f \
+	zgeru.f \
+	zher.f \
+	zscal.f \
+	zswap.f \
+	ztrsm.f
 
 libcoinblas_la_LDFLAGS = $(LT_LDFLAGS)
 
