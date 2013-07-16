@@ -24,7 +24,7 @@ echo " "
 rm -f blas.tgz
 
 echo "Downloading the source code from www.netlib.org..."
-$wgetcmd ftp://www.netlib.org/blas/blas.tgz
+$wgetcmd http://www.netlib.org/blas/blas.tgz
 
 echo "Uncompressing the tarball..."
 gunzip -f blas.tgz
