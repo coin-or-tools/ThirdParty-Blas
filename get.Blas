@@ -24,7 +24,12 @@ echo " "
 rm -f blas.tgz
 
 echo "Downloading the source code from www.netlib.org..."
-$wgetcmd http://www.netlib.org/blas/blas.tgz
+if ! $wgetcmd http://www.netlib.org/blas/blas.tgz ;
+then
+  echo
+  echo "Failed, try downloading the source code from netlib.sandia.gov..."
+  $wgetcmd http://netlib.sandia.gov/blas/blas.tgz
+fi
 
 echo "Uncompressing the tarball..."
 gunzip -f blas.tgz
