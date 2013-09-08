@@ -2,7 +2,7 @@
 
 set -e
 
-wgetcmd="wget --no-check-certificate"
+wgetcmd="wget"
 wgetcount=`which wget 2>/dev/null | wc -l`
 if test ! $wgetcount = 1; then
   echo "Utility wget not found in your PATH."
@@ -17,6 +17,8 @@ if test ! $wgetcount = 1; then
   fi
 fi
 
+coinblas=blas-20130815.tgz
+
 echo " "
 echo "Running script for downloading the source code for BLAS"
 echo " "
@@ -24,9 +26,9 @@ echo " "
 rm -f blas.tgz
 
 echo "Downloading the source code from projects.coin-or.org..."
-if $wgetcmd https://projects.coin-or.org/svn/BuildTools/ThirdParty/Blas/src/blas-20130815.tgz ;
+if $wgetcmd https://projects.coin-or.org/svn/BuildTools/ThirdParty/Blas/src/$coinblas ;
 then
-  mv blas-20130815.tgz blas.tgz
+  mv $coinblas blas.tgz
 else
   echo
   echo "Failed, try downloading the source code from www.netlib.org..."
@@ -34,7 +36,30 @@ else
   then
     echo
     echo "Failed, try downloading the source code from netlib.sandia.gov..."
-    $wgetcmd http://netlib.sandia.gov/blas/blas.tgz
+    if ! $wgetcmd http://netlib.sandia.gov/blas/blas.tgz ;
+    then
+      if test "$wgetcmd" = wget ;
+      then
+        echo -n "Failed, try downloading from https://projects.coin-or.org without certificate check? (y/n) "
+        if test "$1" = "-y" ;
+        then
+          doit=y
+          echo y
+        else
+          read -n 1 doit
+          echo
+        fi
+        if test "$doit" = y ;
+        then
+          $wgetcmd --no-check-certificate https://projects.coin-or.org/svn/BuildTools/ThirdParty/Blas/src/$coinblas
+          mv $coinblas blas.tgz
+        else
+          exit 1;
+        fi
+      else
+        exit 1;
+      fi
+    fi
   fi
 fi
 
