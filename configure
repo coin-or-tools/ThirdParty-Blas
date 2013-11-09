@@ -2766,7 +2766,9 @@ case "$CC" in
 echo "$as_me: Overruling autoconf; cl does not recognise -g." >&6;}
     fi ;;
   * )
-    CYGPATH_W=echo
+    if test x"$CYGPATH_W" = x ; then
+      CYGPATH_W=echo
+    fi
     ;;
 esac
 CFLAGS="$save_cflags"
@@ -3396,7 +3398,7 @@ fi
 
 
 # Provide some information about the compiler.
-echo "$as_me:3399:" \
+echo "$as_me:3401:" \
      "checking for Fortran 77 compiler version" >&5
 ac_compiler=`set X $ac_compile; echo $2`
 { (eval echo "$as_me:$LINENO: \"$ac_compiler --version </dev/null >&5\"") >&5
@@ -3919,7 +3921,7 @@ _ACEOF
 # flags.
 ac_save_FFLAGS=$FFLAGS
 FFLAGS="$FFLAGS $ac_verb"
-(eval echo $as_me:3922: \"$ac_link\") >&5
+(eval echo $as_me:3924: \"$ac_link\") >&5
 ac_f77_v_output=`eval $ac_link 5>&1 2>&1 | grep -v 'Driving:'`
 echo "$ac_f77_v_output" >&5
 FFLAGS=$ac_save_FFLAGS
@@ -3997,7 +3999,7 @@ _ACEOF
 # flags.
 ac_save_FFLAGS=$FFLAGS
 FFLAGS="$FFLAGS $ac_cv_prog_f77_v"
-(eval echo $as_me:4000: \"$ac_link\") >&5
+(eval echo $as_me:4002: \"$ac_link\") >&5
 ac_f77_v_output=`eval $ac_link 5>&1 2>&1 | grep -v 'Driving:'`
 echo "$ac_f77_v_output" >&5
 FFLAGS=$ac_save_FFLAGS
@@ -6608,7 +6610,7 @@ ia64-*-hpux*)
   ;;
 *-*-irix6*)
   # Find out which ABI we are using.
-  echo '#line 6611 "configure"' > conftest.$ac_ext
+  echo '#line 6613 "configure"' > conftest.$ac_ext
   if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
   (eval $ac_compile) 2>&5
   ac_status=$?
@@ -9085,11 +9087,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:9088: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:9090: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:9092: \$? = $ac_status" >&5
+   echo "$as_me:9094: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -9353,11 +9355,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:9356: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:9358: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:9360: \$? = $ac_status" >&5
+   echo "$as_me:9362: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -9457,11 +9459,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:9460: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:9462: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>out/conftest.err)
    ac_status=$?
    cat out/conftest.err >&5
-   echo "$as_me:9464: \$? = $ac_status" >&5
+   echo "$as_me:9466: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s out/conftest2.$ac_objext
    then
      # The compiler can only warn and ignore the option if not recognized
@@ -11874,7 +11876,7 @@ else
   lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
   lt_status=$lt_dlunknown
   cat > conftest.$ac_ext <<EOF
-#line 11877 "configure"
+#line 11879 "configure"
 #include "confdefs.h"
 
 #if HAVE_DLFCN_H
@@ -11974,7 +11976,7 @@ else
   lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
   lt_status=$lt_dlunknown
   cat > conftest.$ac_ext <<EOF
-#line 11977 "configure"
+#line 11979 "configure"
 #include "confdefs.h"
 
 #if HAVE_DLFCN_H
@@ -14334,11 +14336,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:14337: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:14339: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:14341: \$? = $ac_status" >&5
+   echo "$as_me:14343: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -14438,11 +14440,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:14441: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:14443: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>out/conftest.err)
    ac_status=$?
    cat out/conftest.err >&5
-   echo "$as_me:14445: \$? = $ac_status" >&5
+   echo "$as_me:14447: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s out/conftest2.$ac_objext
    then
      # The compiler can only warn and ignore the option if not recognized
@@ -16008,11 +16010,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:16011: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:16013: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:16015: \$? = $ac_status" >&5
+   echo "$as_me:16017: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -16112,11 +16114,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:16115: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:16117: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>out/conftest.err)
    ac_status=$?
    cat out/conftest.err >&5
-   echo "$as_me:16119: \$? = $ac_status" >&5
+   echo "$as_me:16121: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s out/conftest2.$ac_objext
    then
      # The compiler can only warn and ignore the option if not recognized
@@ -18319,11 +18321,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:18322: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:18324: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:18326: \$? = $ac_status" >&5
+   echo "$as_me:18328: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -18587,11 +18589,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:18590: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:18592: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:18594: \$? = $ac_status" >&5
+   echo "$as_me:18596: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -18691,11 +18693,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:18694: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:18696: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>out/conftest.err)
    ac_status=$?
    cat out/conftest.err >&5
-   echo "$as_me:18698: \$? = $ac_status" >&5
+   echo "$as_me:18700: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s out/conftest2.$ac_objext
    then
      # The compiler can only warn and ignore the option if not recognized
@@ -21406,45 +21408,6 @@ echo "$as_me: Build is \"$build\"." >&6;}
   case $build in
     # Here we need to check if -m32 is specified.  If so, we need to correct
     # sys_lib_search_path_spec
-    *x86_64-*)
-      if test "$GCC" = yes && (echo $CXXFLAGS $CFLAGS $FFLAGS | $EGREP 'm32' >& /dev/null); then
-        { echo "$as_me:$LINENO: Applying patches to libtool for 32bit compilation" >&5
-echo "$as_me: Applying patches to libtool for 32bit compilation" >&6;}
-        sed -e 's|sys_lib_search_path_spec=".*"|sys_lib_search_path_spec="/lib /usr/lib"|' libtool > conftest.bla
-        mv conftest.bla libtool
-        chmod 755 libtool
-      fi
-      ;;
-
-    *-solaris*)
-       if test "$GCC" = yes && \
-     (echo $CXXFLAGS $CFLAGS $FFLAGS | $EGREP 'm64' >/dev/null 2>&1) ; then
-    hdwisa=`isainfo | sed -e 's/\([^ ]*\) .*$/\1/'`
-    if `$EGREP 'sys_lib_search_path_spec=' libtool | $EGREP -v $hdwisa >/dev/null 2>&1` ; then
-      { echo "$as_me:$LINENO: Applying patches to libtool for 64-bit GCC compilation" >&5
-echo "$as_me: Applying patches to libtool for 64-bit GCC compilation" >&6;}
-      fixlibtmp=`$CC -m64 -print-search-dirs | $EGREP '^libraries:'`
-      fixlibtmp=`echo $fixlibtmp | sed -e 's/libraries: =//' -e 's/:/ /g'`
-      if `echo "$fixlibtmp" | $EGREP -v $hdwisa  >/dev/null 2>&1` ; then
-	# AC_MSG_NOTICE(Compensating for broken gcc)
-	for lib in $fixlibtmp ; do
-	  if test -d "${lib}${hdwisa}" ; then
-	    syslibpath64="$syslibpath64 ${lib}${hdwisa}/"
-	  fi
-	done
-	syslibpath64="${syslibpath64} ${fixlibtmp}"
-      else
-	syslibpath64="$fixlibtmp"
-      fi
-      sed -e 's|sys_lib_search_path_spec=".*"|sys_lib_search_path_spec="'"$syslibpath64"'"|' libtool > conftest.bla
-      mv conftest.bla libtool
-      chmod 755 libtool
-    fi
-    # AC_MSG_NOTICE(Result is )
-    # $EGREP 'sys_lib_search_path_spec=' libtool
-  fi
-      ;;
-    # Cygwin. Ah, cygwin. Too big and ugly to inline; see the macro.
     *-cygwin* | *-mingw*)
        case "$CXX" in
     clang* )
@@ -21485,6 +21448,45 @@ echo "$as_me: Applying patches to libtool for GNU compiler" >&6;}
   chmod 755 libtool
 
       ;;
+    *x86_64-*)
+      if test "$GCC" = yes && (echo $CXXFLAGS $CFLAGS $FFLAGS | $EGREP 'm32' >& /dev/null); then
+        { echo "$as_me:$LINENO: Applying patches to libtool for 32bit compilation" >&5
+echo "$as_me: Applying patches to libtool for 32bit compilation" >&6;}
+        sed -e 's|sys_lib_search_path_spec=".*"|sys_lib_search_path_spec="/lib /usr/lib"|' libtool > conftest.bla
+        mv conftest.bla libtool
+        chmod 755 libtool
+      fi
+      ;;
+
+    *-solaris*)
+       if test "$GCC" = yes && \
+     (echo $CXXFLAGS $CFLAGS $FFLAGS | $EGREP 'm64' >/dev/null 2>&1) ; then
+    hdwisa=`isainfo | sed -e 's/\([^ ]*\) .*$/\1/'`
+    if `$EGREP 'sys_lib_search_path_spec=' libtool | $EGREP -v $hdwisa >/dev/null 2>&1` ; then
+      { echo "$as_me:$LINENO: Applying patches to libtool for 64-bit GCC compilation" >&5
+echo "$as_me: Applying patches to libtool for 64-bit GCC compilation" >&6;}
+      fixlibtmp=`$CC -m64 -print-search-dirs | $EGREP '^libraries:'`
+      fixlibtmp=`echo $fixlibtmp | sed -e 's/libraries: =//' -e 's/:/ /g'`
+      if `echo "$fixlibtmp" | $EGREP -v $hdwisa  >/dev/null 2>&1` ; then
+	# AC_MSG_NOTICE(Compensating for broken gcc)
+	for lib in $fixlibtmp ; do
+	  if test -d "${lib}${hdwisa}" ; then
+	    syslibpath64="$syslibpath64 ${lib}${hdwisa}/"
+	  fi
+	done
+	syslibpath64="${syslibpath64} ${fixlibtmp}"
+      else
+	syslibpath64="$fixlibtmp"
+      fi
+      sed -e 's|sys_lib_search_path_spec=".*"|sys_lib_search_path_spec="'"$syslibpath64"'"|' libtool > conftest.bla
+      mv conftest.bla libtool
+      chmod 755 libtool
+    fi
+    # AC_MSG_NOTICE(Result is )
+    # $EGREP 'sys_lib_search_path_spec=' libtool
+  fi
+      ;;
+    # Cygwin. Ah, cygwin. Too big and ugly to inline; see the macro.
     *-darwin*)
       { echo "$as_me:$LINENO: Applying patches to libtool for Darwin" >&5
 echo "$as_me: Applying patches to libtool for Darwin" >&6;}
