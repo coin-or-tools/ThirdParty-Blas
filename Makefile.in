@@ -77,7 +77,7 @@ am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
 am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(pkgconfiglibdir)"
 libLTLIBRARIES_INSTALL = $(INSTALL)
 LTLIBRARIES = $(lib_LTLIBRARIES)
-libcoinblas_la_LIBADD =
+libcoinblas_la_DEPENDENCIES =
 am_libcoinblas_la_OBJECTS = dasum.lo daxpy.lo dcabs1.lo dcopy.lo \
 	ddot.lo dgbmv.lo dgemm.lo dgemv.lo dger.lo dnrm2.lo drot.lo \
 	drotg.lo drotm.lo drotmg.lo dsbmv.lo dscal.lo dsdot.lo \
@@ -321,6 +321,7 @@ libcoinblas_la_SOURCES = \
 	zswap.f \
 	ztrsm.f
 
+@DEPENDENCY_LINKING_TRUE@libcoinblas_la_LIBADD = $(BLASLIB_LIBS) 
 libcoinblas_la_LDFLAGS = $(LT_LDFLAGS)
 pkgconfiglibdir = $(libdir)/pkgconfig
 pkgconfiglib_DATA = coinblas.pc

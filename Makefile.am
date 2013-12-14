@@ -71,6 +71,10 @@ libcoinblas_la_SOURCES = \
 	zswap.f \
 	ztrsm.f
 
+if DEPENDENCY_LINKING 
+libcoinblas_la_LIBADD = $(BLASLIB_LIBS) 
+endif 
+
 libcoinblas_la_LDFLAGS = $(LT_LDFLAGS)
 
 pkgconfiglibdir = $(libdir)/pkgconfig
