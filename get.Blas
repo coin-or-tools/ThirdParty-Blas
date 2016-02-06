@@ -47,7 +47,7 @@ echo "Uncompressing the tarball..."
 gunzip -f blas.tgz
 
 echo "Unpacking the source code..."
-tar -xf blas.tar
+tar xf blas.tar
 
 echo "Deleting the tar file..."
 rm blas.tar
